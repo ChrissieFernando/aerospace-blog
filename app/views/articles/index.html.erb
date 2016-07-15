@@ -1,21 +1,8 @@
-<h1>  LISTING ARTICLES </h1>
-<%= link_to "CREATE NEW ARTICLE" , new_article_path %></br></br>
-<table border="1">
-  <thead>
-    <tr>
-      <td>TITLE</td>
-      <td>DESCRIPTION</td>
-    </tr>
-  </thead>
-  <% @article.each do |t| %>
-  <tbody>
-    <tr>
-      <td><%= t.title %></td>
-      <td><%= t.description %></td>
-      <td><%= link_to "EDIT" , edit_article_path(t) %></td>
-      <td><%= link_to "SHOW" , article_path(t) %></td>
-      <td><%= link_to "DELETE" , article_path(t) , method: :delete , data: { confirm: "ARE YOU SURE?" } %></td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
+<h1 align="center">Listing all articles</h1>
+<div align="center">
+  <%= will_paginate %>
+</div>
+<%= render 'article', obj: @articles %>
+<div align="center">
+  <%= will_paginate %>
+</div>
