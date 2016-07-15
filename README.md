@@ -1,2 +1,0 @@
-# aerospace-blog
-
