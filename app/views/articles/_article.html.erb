@@ -1,13 +1,16 @@
 <% obj.each do |article| %>
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-12 col-sm-8 col-lg-8 col-sm-offset-2 col-lg-offset-2">
       <div class="well well-lg">
         <div class="article-title">
           <div class="row">
           <% user = article.user_id %>
           <% user = User.find(user) %>
-          <%= gravatar_for user, size: 150 %>
+          <div align = "center">
+          <%= link_to gravatar_for(user), user_path(user) %></br></br>
+
           <%= link_to article.title, article_path(article) %>
+        </div>
           </div>
          <div class="article-body">
           <%= truncate(article.description, length: 100) %>
