@@ -1,7 +1,7 @@
 <% obj.reverse.each do |article| %>
   <div class="row" >
     <div class="col-xs-12 col-sm-8 col-lg-8 col-md-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2 ">
-      <div class="well well-lg effect5"  id = "article">
+      <div class="well well-lg effect5 "  id = "article" >
         <div class="article-title">
           <div class="row">
           <% user = article.user_id %>
@@ -17,7 +17,13 @@
           </div>
           </div>
          <div class="article-body">
-          <%= truncate(article.description, length: 100) %>
+           <div class="card card-inverse card-success text-xs-center user">
+            <div class="card-block">
+              <blockquote class="card-blockquote">
+                <%= truncate(article.description, length: 100) %>
+              </blockquote>
+            </div>
+          </div>
           <div class="article-meta-details">
             <small>Created by: <%= article.user.username if article.user%>,
                     <%= time_ago_in_words(article.created_at) %> ago,

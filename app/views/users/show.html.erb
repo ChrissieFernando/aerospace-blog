@@ -1,3 +1,4 @@
+<div class="bg-warning">
 <h1 align="center">Welcome to <%= @user.username %>'s page</h1>
 <% name = @user.username.split("") %>
 <% name = name[0].upcase %>
@@ -9,4 +10,5 @@
 <%= render 'articles/article', obj: @user_articles %>
 <div class="center">
   <%= will_paginate @user_articles %>
+</div>
 </div>

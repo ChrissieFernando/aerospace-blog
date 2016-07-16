@@ -39,14 +39,30 @@ $navbar-default-bg:#0b1414;
   text-align: center;
 }
 
-.jumbotron {
+.jumbotron1 {
   padding-top: 130px;
   margin-bottom: -10px;
-  background-image: asset-url('new_cover_page.png');
-  background-size: cover;
+  background-image:asset-url('new_cover_page.png');
   height: 650px;
 }
 
+.image{
+  background-image:asset-url('aero.jpg');
+  background-size: cover;
+  height: 300px;
+}
+.tablet{
+  background-image:asset-url('new_cover_page1.jpg');
+  background-size: cover;
+  padding-top: 130px;
+  height: 450px;
+}
+.mobile{
+  background-image:asset-url('machyard.jpg');
+  background-size: cover;
+  padding-top: -10px;
+  height: 480px;
+}
 .jumbotron h1 {
   color: #fff;
   text-align: center;
@@ -146,11 +162,19 @@ footer ul li {
   border-radius: 10px;
   box-shadow: 10px 10px 5px #888888;
 }
-#user{
+.user {
    box-shadow: 10px 10px 5px #888888;
+
    border-top-left-radius: 20px;
    border-bottom-right-radius: 20px;
 }
+.user1 {
+   box-shadow: 15px 15px 15px  #888888;
+
+   border-top-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+}
+
 .effect5
 {
   position: relative;
