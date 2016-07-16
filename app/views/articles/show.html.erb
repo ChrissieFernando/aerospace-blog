@@ -1,15 +1,16 @@
-<h2 align="center">Title: <%= @article.title %></h2>
-<div class="well col-xs-8 col-xs-offset-2">
+<h2 align="center">TITLE<b>: <%= @article.title.upcase %></b></h2>
+<div class="well col-xs-8 col-xs-offset-2 effect5" id="user" align = "center" style="border-top-left-radius: 20px;" >
   <% if @article.user %>
     <ul class="listing">
       <div class="row center">
         <div class="col-md-4 col-md-offset-4">
-          <li>Created by:</li>
-          <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+          <li>Created by:</li></br>
+          <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li></br>
           <li class="article-title">
             <%= link_to @article.user.username, user_path(@article.user) %>
           </li>
-          <li><small>
+        </br>
+          <li><small class="btn btn-sm btn-info">
             <%= pluralize(@article.user.articles.count, "article") if @article.user.articles %>
           </small></li>
         </div>
@@ -17,18 +18,27 @@
     </ul>
   <% end %>
   <h4 class="center description"><strong>Description:</strong></h4>
-  <hr>
-  <%= simple_format(@article.description) %>
+</br>
+<div class="card card-warning-outline text-xs-center " id="user">
+  <div  class="card-block">
+    <blockquote class="card-blockquote">
+      <h5><b>  <%= simple_format(@article.description) %></b></h5>
+    </blockquote>
+  </div>
+</div>
+</br>
   <% if @article.categories.any? %>
-    <p>Categories: <%= render @article.categories %></p>
+    <p><b> CATECOGRIES : </b> <%= render @article.categories %></p>
   <% end %>
+</br>
+
   <div class="article-actions">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
       <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
-      <%= link_to "Delete this article", article_path(@article), method: :delete, 
-                                        data: { confirm: "Are you sure you want to delete the article?"}, 
+      <%= link_to "Delete this article", article_path(@article), method: :delete,
+                                        data: { confirm: "Are you sure you want to delete the article?"},
                                         class: "btn btn-xs btn-danger" %>
     <% end %>
-    <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
+    <%= link_to "View all articles", articles_path, class: "btn btn-lg btn-success" %>
   </div>
 </div>

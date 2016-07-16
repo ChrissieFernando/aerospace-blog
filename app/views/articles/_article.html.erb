@@ -1,7 +1,7 @@
 <% obj.each do |article| %>
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-lg-8 col-sm-offset-2 col-lg-offset-2">
-      <div class="well well-lg">
+  <div class="row" >
+    <div class="col-xs-12 col-sm-8 col-lg-8 col-md-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2 ">
+      <div class="well well-lg effect5"  id = "article">
         <div class="article-title">
           <div class="row">
           <% user = article.user_id %>
@@ -10,7 +10,7 @@
           <%= link_to gravatar_for(user), user_path(user) %></br></br>
 
           <%= link_to article.title, article_path(article) %>
-        </div>
+          </div>
           </div>
          <div class="article-body">
           <%= truncate(article.description, length: 100) %>
@@ -21,7 +21,7 @@
           </div>
         </div>
         <% if article.categories.any? %>
-          <p>Categories: <%= render article.categories %></p>
+          <p >Categories: <%= render article.categories %></p>
         <% end %>
         <% if logged_in? && (current_user == article.user || current_user.admin?) %>
           <div class="article-actions">
@@ -30,8 +30,10 @@
                                           data: { confirm: "Are you sure you want to delete the article?"},
                                           class: "btn btn-xs btn-danger" %>
           </div>
-        <% end %>
+          <% end %>
       </div>
     </div>
   </div>
+</div>
+
 <% end %>
