@@ -28,16 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="form-group">
-        <div class="row">
-          <div class="col-sm-offset-2 col-sm-8">
-            <%= f.radio_button :tags, 'email',  :checked => true %>
-            <%= f.label :tags, 'Email', :value => 'email' %>
-            <%= f.radio_button :tags, 'sms' %>
-            <%= f.label :tags, 'SMS', :value => 'sms' %>
-          </div>
-        </div>
-      </div>
+      
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <%= f.submit class: 'btn btn-primary btn-lg' %>
