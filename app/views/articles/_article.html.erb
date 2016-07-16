@@ -1,4 +1,4 @@
-<% obj.each do |article| %>
+<% obj.reverse.each do |article| %>
   <div class="row" >
     <div class="col-xs-12 col-sm-8 col-lg-8 col-md-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2 ">
       <div class="well well-lg effect5"  id = "article">
@@ -6,9 +6,13 @@
           <div class="row">
           <% user = article.user_id %>
           <% user = User.find(user) %>
+          <% name = user.username.split("") %>
+          <% name = name[0].upcase %>
           <div align = "center">
-          <%= link_to gravatar_for(user), user_path(user) %></br></br>
-
+            <div class="name">
+          <%= link_to name , user_path(user) %>
+            </div>
+            </br></br>
           <%= link_to article.title, article_path(article) %>
           </div>
           </div>

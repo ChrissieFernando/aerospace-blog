@@ -3,10 +3,24 @@ $navbar-default-bg:#0b1414;
 @import "bootstrap";
 .navbar{
   opacity: .8;
-  height: 50px;
 }
 
-
+.name{
+  width: 150px;
+  height: 150px;
+  font-size: 7em;
+  border-radius: 150px;
+  text-decoration: none;
+  padding-bottom: 20px;
+  font-weight: 900;
+}
+.name_user {
+  width: 150px;
+  height: 150px;
+  font-size: 10em;
+  border-radius: 150px;
+  text-decoration: none;
+}
 #logo {
   float: left;
   font-size: 1.7em;
@@ -29,8 +43,8 @@ $navbar-default-bg:#0b1414;
   padding-top: 130px;
   margin-bottom: -10px;
   background-image: asset-url('new_cover_page.png');
-  background-size:cover;
-  height: 515px;
+  background-size: cover;
+  height: 650px;
 }
 
 .jumbotron h1 {
@@ -43,7 +57,7 @@ $navbar-default-bg:#0b1414;
 
 .btn-xlarge {
   font-size: 1.7em;
-  margin-top: 30px;
+  margin-top: 50px;
   background-color: black;
 }
 
