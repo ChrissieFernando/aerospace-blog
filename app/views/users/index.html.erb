@@ -10,7 +10,7 @@
           <div class="name_user">
           <li><%= link_to name , user_path(user) %></li>
           </div>
-          </br></br>
+        </br></br></br></br>
           <li class="article-title">
             <%= link_to user.username, user_path(user) %>
           </li>
@@ -18,7 +18,7 @@
           <li><small class="btn btn-danger btn-lg"><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
         </br></br>
           <% if logged_in? and current_user.admin? %>
-            <li class="btn btn-success"><%= link_to "Delete this user", user_path(user), method: :delete,
+            <li class="btn btn-warning"><%= link_to "Delete this user", user_path(user), method: :delete,
                 data: { confirm: "Are you sure you want to delete the user and all their articles?" } %></li>
           <% end %>
         </div>
