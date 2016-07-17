@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     if logged_in?
       @users = User.order('username ASC').paginate(page: params[:page], per_page: 4)
     else
+      flash[:danger] = "You must be logged in to view the Users"
       render ("pages/home")
     end
   end
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
     if logged_in?
       @user = User.new
     else
+      flash[:danger] = "You must be logged in to view the Users"
       render ("pages/home")
     end
 
@@ -46,8 +48,9 @@ class UsersController < ApplicationController
     if logged_in?
       @user_articles = @user.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
     else
+      flash[:danger] = "You must be logged in to view the Users"
       render ("pages/home")
-    end  
+    end
   end
 
   def destroy

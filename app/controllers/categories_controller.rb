@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
     if logged_in?
     @categories = Category.paginate(page: params[:page], per_page: 5)
     else
+      flash[:danger] = "You must be logged in to view the Categories"
       render ("pages/home")
     end
   end
@@ -13,6 +14,7 @@ class CategoriesController < ApplicationController
     if logged_in?
     @category = Category.new
     else
+      flash[:danger] = "You must be logged in to view the Categories"
       render ("pages/home")
     end
 
@@ -47,6 +49,7 @@ class CategoriesController < ApplicationController
       @category = Category.find(params[:id])
       @category_articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
     else
+      flash[:danger] = "You must be logged in to view the Categories"
       render ("pages/home")
     end
   end
