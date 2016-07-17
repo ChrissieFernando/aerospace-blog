@@ -14,13 +14,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Articles", articles_path %></li>
-        <li><%= link_to "Users", users_path %></li>
+        <li style="font-size:1.4em"><%= link_to "Articles", articles_path  %></li>
+        <li style="font-size:1.4em"><%= link_to "Users", users_path %></li>
         <% if logged_in? %>
-          <li class="dropdown">
+          <li style="font-size:1.4em" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
             <ul class="dropdown-menu" style="background-color:#0b1414;opacity:1;">
-              <li><%= link_to "New Article", new_article_path %></li>
+              <li style="font-size:1.4em"><%= link_to "New Article", new_article_path %></li>
               <!-- <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
@@ -30,16 +30,16 @@
             </ul>
           </li>
         <% end %>
-        <li class="dropdown" style="background-color:#0b1414">
+        <li style="font-size:1.4em" class="dropdown" style="background-color:#0b1414">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
           <ul class="dropdown-menu" style="background-color:#0b1414;opacity:1;">
-            <li><%= link_to "All Categories", categories_path %></li>
+            <li style="font-size:1.2em" ><%= link_to "All Categories", categories_path %></li>
             <% Category.all.each do |category| %>
-              <li><%= link_to "#{category.name}", category_path(category) %></li>
+              <li style="font-size:1.2em" ><%= link_to "#{category.name}", category_path(category) %></li>
             <% end %>
             <% if logged_in? and current_user.admin? %>
               <li role="separator" class="divider"></li>
-              <li><%= link_to "Create New Category", new_category_path %></li>
+              <li style="font-size:1.2em;" ><%= link_to "Create New Category", new_category_path %></li>
             <% end %>
           </ul>
         </li>
@@ -54,18 +54,18 @@
         <% if logged_in? %>
         <% name = current_user.username %>
           <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b><%= name %> </b><%= "Admin" if current_user.admin? %><span class="caret"></span></a>
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b><span style="font-size:1.2em" ><%= name %> </span></b><%= "Admin" if current_user.admin? %><span class="caret"></span></a>
             <ul class="dropdown-menu" style="background-color:#0b1414;opacity:1;">
-              <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
-              <li><%= link_to "View your profile", user_path(current_user) %></li>
+              <li style="font-size:1.2em" ><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
+              <li style="font-size:1.2em" ><%= link_to "View your profile", user_path(current_user) %></li>
               <li role="separator" class="divider"></li>
-            <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+            <li style="font-size:1.2em" ><%= link_to 'Log out', logout_path, method: :delete %></li>
             </ul>
           </li>
         <% else %>
 
-          <li><%= link_to 'Log in', login_path %></li>
-          <li><%= link_to 'Sign up', signup_path %></li>
+          <li style="font-size:1.2em" ><%= link_to 'Log in', login_path %></li>
+          <li style="font-size:1.2em" ><%= link_to 'Sign up', signup_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
