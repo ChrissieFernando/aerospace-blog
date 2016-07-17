@@ -35,7 +35,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @category_articles = @category.articles.order('created_at DESC').paginate(page: params[:page], per_page: 3)
+    @category_articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
   end
   private
   def category_params
