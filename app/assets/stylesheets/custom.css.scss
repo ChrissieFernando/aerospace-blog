@@ -1,48 +1,48 @@
 $navbar-default-bg:#0b1414;
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@media(max-width:$screen-sm-max) {
-.mobile{
-  background-image:asset-url('machyard.jpg');
-  background-size: cover;
-  height:450px;
-}
-
-.navbar-header {
-   float: none;
-}
-.navbar-left,.navbar-right {
-   float: none !important;
-}
-.navbar-toggle {
-   display: block;
-}
-.navbar-collapse {
-   border-top: 1px solid transparent;
-   box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-}
-.navbar-fixed-top {
-   top: 0;
-   border-width: 0 0 1px;
-}
-.navbar-collapse.collapse {
-   display: none!important;
-}
-.navbar-nav {
-   float: none!important;
-   margin-top: 7.5px;
-}
-.navbar-nav>li {
-   float: none;
-}
-.navbar-nav>li>a {
-   padding-top: 10px;
-   padding-bottom: 10px;
-}
-.collapse.in{
-   display:block !important;
-}
-}
+// @media(max-width:$screen-sm-max) {
+// .mobile{
+//   background-image:asset-url('machyard.jpg');
+//   background-size: cover;
+//   height:450px;
+// }
+//
+// .navbar-header {
+//    float: none;
+// }
+// .navbar-left,.navbar-right {
+//    float: none !important;
+// }
+// .navbar-toggle {
+//    display: block;
+// }
+// .navbar-collapse {
+//    border-top: 1px solid transparent;
+//    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+// }
+// .navbar-fixed-top {
+//    top: 0;
+//    border-width: 0 0 1px;
+// }
+// .navbar-collapse.collapse {
+//    display: none!important;
+// }
+// .navbar-nav {
+//    float: none!important;
+//    margin-top: 7.5px;
+// }
+// .navbar-nav>li {
+//    float: none;
+// }
+// .navbar-nav>li>a {
+//    padding-top: 10px;
+//    padding-bottom: 10px;
+// }
+// .collapse.in{
+//    display:block !important;
+// }
+// }
 
 
 .navbar{
@@ -101,11 +101,11 @@ $navbar-default-bg:#0b1414;
   padding-top: 130px;
   height: 450px;
 }
-// .mobile{
-//   background-image:asset-url('aero.jpg');
-//   background-size: cover;
-//   height:450px;
-// }
+.mobile{
+  background-image:asset-url('aero.jpg');
+  background-size: cover;
+  height:450px;
+}
 .jumbotron h1 {
   color: #fff;
   text-align: center;
