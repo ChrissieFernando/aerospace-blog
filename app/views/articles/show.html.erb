@@ -29,8 +29,10 @@
       </div>
     </ul>
   <% end %>
+  </br>
   <h4 class="center description"><strong>Description:</strong></h4>
 </br>
+
 <div class="card card-info text-xs-center user">
   <div  class="card-block">
     <blockquote class="card-blockquote">
@@ -39,6 +41,14 @@
   </div>
 </div>
 </br>
+<div class="visible-lg">
+<% if @article.video == nil %>
+<% else %>
+  <object width="95%" height="420"
+  data="<%= @article.video %>">
+  </object>
+<% end %>
+</div>
   <% if @article.categories.any? %>
     <p><b> CATECOGRIES :</br></br> </b> <%= render @article.categories %></p>
   <% end %>

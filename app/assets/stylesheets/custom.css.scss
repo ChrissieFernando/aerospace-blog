@@ -50,13 +50,13 @@ $navbar-default-bg:#0b1414;
 }
 
 .name{
+  background-image: asset-url('aero.jpg');
+  background-size: cover;
   width: 150px;
   height: 150px;
-  font-size: 7em;
   border-radius: 150px;
   text-decoration: none;
   padding-bottom: 20px;
-  font-weight: 900;
 }
 .name_user {
   width: 140px;

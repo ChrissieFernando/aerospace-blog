@@ -10,7 +10,6 @@
           <% name = name[0].upcase %>
           <div align = "center">
             <div class="name">
-          <%= link_to name , user_path(user) %>
             </div>
             </br></br>
           <%= link_to article.title, article_path(article) %>
@@ -24,6 +23,16 @@
               </blockquote>
             </div>
           </div>
+        </br>
+        <div class="visible-lg">
+        <% if article.video == nil %>
+        <% else %>
+          <object width="100%" height="420"
+          data="<%= article.video %>">
+          </object>
+        <% end %>
+      </div>
+
           <div class="article-meta-details">
             <small>Created by: <%= article.user.username if article.user%>,
                     <%= time_ago_in_words(article.created_at) %> ago,
