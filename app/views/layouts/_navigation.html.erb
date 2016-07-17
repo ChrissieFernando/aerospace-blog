@@ -14,9 +14,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <% if logged_in? %>
         <li style="font-size:1.2em"><%= link_to "Articles", articles_path  %></li>
         <li style="font-size:1.2em"><%= link_to "Users", users_path %></li>
-        <% if logged_in? %>
           <li style="font-size:1.2em" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
             <ul class="dropdown-menu" style="background-color:#0b1414;opacity:1;">
@@ -31,11 +31,13 @@
           </li>
         <% end %>
         <li style="font-size:1.2em" class="dropdown" style="background-color:#0b1414">
+          <% if logged_in? %>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
           <ul class="dropdown-menu" style="background-color:#0b1414;opacity:1;">
             <li style="font-size:1.2em" ><%= link_to "All Categories", categories_path %></li>
             <% Category.all.each do |category| %>
               <li style="font-size:1.2em" ><%= link_to "#{category.name}", category_path(category) %></li>
+            <% end %>
             <% end %>
             <% if logged_in? and current_user.admin? %>
               <li role="separator" class="divider"></li>

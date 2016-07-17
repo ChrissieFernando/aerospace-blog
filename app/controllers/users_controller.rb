@@ -3,11 +3,20 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_admin, only: [:destroy]
   def index
-    @users = User.order('username ASC').paginate(page: params[:page], per_page: 4)
+    if logged_in?
+      @users = User.order('username ASC').paginate(page: params[:page], per_page: 4)
+    else
+      render ("pages/home")
+    end
   end
 
   def new
-    @user = User.new
+    if logged_in?
+      @user = User.new
+    else
+      render ("pages/home")
+    end
+
   end
 
   def create
@@ -34,7 +43,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_articles = @user.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
+    if logged_in?
+      @user_articles = @user.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
+    else
+      render ("pages/home")
+    end  
   end
 
   def destroy

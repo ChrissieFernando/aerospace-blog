@@ -2,11 +2,20 @@ class CategoriesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
   def index
+    if logged_in?
     @categories = Category.paginate(page: params[:page], per_page: 5)
+    else
+      render ("pages/home")
+    end
   end
 
   def new
+    if logged_in?
     @category = Category.new
+    else
+      render ("pages/home")
+    end
+
   end
 
   def create
@@ -34,8 +43,12 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @category_articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
+    if logged_in?
+      @category = Category.find(params[:id])
+      @category_articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
+    else
+      render ("pages/home")
+    end
   end
   private
   def category_params

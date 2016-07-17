@@ -4,12 +4,19 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-
-    @articles = Article.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
+    if logged_in?
+      @articles = Article.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
+    else
+      render ("pages/home")
+    end
   end
 
   def new
+  if logged_in?
     @article = Article.new
+  else
+    render ("pages/home")
+  end
   end
 
   def edit
@@ -36,6 +43,11 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    if logged_in?
+      render('show')
+    else
+      render ("pages/home")
+    end
   end
 
   def destroy
