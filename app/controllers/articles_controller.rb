@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     if logged_in?
       @articles = Article.order('updated_at DESC').paginate(page: params[:page], per_page: 3)
     else
-      flash[:danger] = "You must be logged in to view the Articles"
+
       render ("pages/home")
     end
   end
@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   if logged_in?
     @article = Article.new
   else
-    flash[:danger] = "You must be logged in to view the Articles"
+
     render ("pages/home")
   end
   end
@@ -48,7 +48,7 @@ class ArticlesController < ApplicationController
     if logged_in?
       render('show')
     else
-      flash[:danger] = "You must be logged in to view the Articles"
+      
       render ("pages/home")
     end
   end
