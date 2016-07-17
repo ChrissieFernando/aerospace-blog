@@ -1,6 +1,6 @@
 <% obj.reverse.each do |article| %>
   <div class="row" >
-    <div class="col-xs-12 col-sm-8 col-lg-8 col-md-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2 ">
+    <div class="col-xs-12 col-sm-10 col-lg-8 col-md-10 col-md-offset-1 col-sm-offset-1 col-lg-offset-2 ">
       <div class="well well-lg effect5 "  id = "article" >
         <div class="article-title">
           <div class="row">
@@ -20,7 +20,7 @@
            <div class="card card-inverse card-success text-xs-center user">
             <div class="card-block">
               <blockquote class="card-blockquote">
-                <%= truncate(article.description, length: 100) %>
+              <h3>  <%= truncate(article.description , length: 100) %> </h3>
               </blockquote>
             </div>
           </div>

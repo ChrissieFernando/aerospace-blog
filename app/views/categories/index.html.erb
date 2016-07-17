@@ -8,9 +8,9 @@
   <% @categories.each do |category| %>
     <ul class="listing">
       <div class="row">
-        <div class="well col-md-4 col-md-offset-4 effect5 user1">
+        <div class="well col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 effect5 user1">
           <li class="article-title">
-            <%= link_to "#{category.name}", category_path(category) %>
+          <%= link_to "#{category.name}", category_path(category) ,class: "btn btn-lg btn-info btn-block" %>
           </li>
         </br>
           <li class="btn-warning btn-lg"><small ><%= pluralize(category.articles.count, "article") %></small></li>

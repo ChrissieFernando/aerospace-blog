@@ -15,11 +15,11 @@ $navbar-default-bg:#0b1414;
   font-weight: 900;
 }
 .name_user {
-  width: 150px;
-  height: 150px;
-  font-size: 10em;
-  border-radius: 150px;
-  text-decoration: none;
+  width: 140px;
+  height: 140px;
+  font-size: 12em;
+  margin-bottom: 10px;
+  text-decoration:none;
 }
 #logo {
   float: left;
@@ -49,7 +49,7 @@ $navbar-default-bg:#0b1414;
 .image{
   background-image:asset-url('aero.jpg');
   background-size: cover;
-  height: 300px;
+  height: 400px;
 }
 .tablet{
   background-image:asset-url('new_cover_page1.jpg');
@@ -59,9 +59,9 @@ $navbar-default-bg:#0b1414;
 }
 .mobile{
   background-image:asset-url('machyard.jpg');
-  background-size: cover;
+  background-size:cover;
   padding-top: -10px;
-  height: 480px;
+  height: 500px;
 }
 .jumbotron h1 {
   color: #fff;
@@ -164,15 +164,16 @@ footer ul li {
 }
 .user {
    box-shadow: 10px 10px 5px #888888;
-
    border-top-left-radius: 20px;
    border-bottom-right-radius: 20px;
 }
 .user1 {
    box-shadow: 15px 15px 15px  #888888;
-
-   border-top-left-radius: 20px;
-   border-bottom-right-radius: 20px;
+//    -webkit-box-shadow: 20px 20px 14px -5px rgba(0,0,0,1);
+// -moz-box-shadow: 20px 20px 14px -5px rgba(0,0,0,1);
+// box-shadow: 20px 20px 14px -5px rgba(0,0,0,1);
+  //  border-top-left-radius: 20px;
+  //  border-bottom-right-radius: 20px;
 }
 
 .effect5
