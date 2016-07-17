@@ -1,6 +1,6 @@
 <div>
 <h2 align="center">TITLE<b>: <%= @article.title.upcase %></b></h2>
-<div class="well col-xs-12 col-sm-8 col-md-10 col-md-offset-1 col-md-8 col-lg-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2 effect5 user1"  align = "center" style="border-top-left-radius: 20px;" >
+<div class="well col-xs-12 col-sm-10 col-md-10 col-md-offset-1 col-lg-8  col-sm-offset-1 col-lg-offset-2 effect5 user1"  align = "center" style="border-top-left-radius: 20px;" >
   <% if @article.user %>
   <% name = @article.user.username.split("") %>
   <% name = name[0].upcase %>
@@ -40,7 +40,7 @@
 </div>
 </br>
   <% if @article.categories.any? %>
-    <p><b> CATECOGRIES : </b> <%= render @article.categories %></p>
+    <p><b> CATECOGRIES :</br></br> </b> <%= render @article.categories %></p>
   <% end %>
 </br>
 
