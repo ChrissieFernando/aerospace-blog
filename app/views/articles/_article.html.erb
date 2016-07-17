@@ -31,7 +31,7 @@
           </div>
         </div>
         <% if article.categories.any? %>
-          <p >Categories:</br> <%= render article.categories  %></p>
+          <p >Categories:</br> </br><%= render article.categories  %></p>
         <% end %>
         <% if logged_in? && (current_user == article.user || current_user.admin?) %>
           <div class="article-actions">
