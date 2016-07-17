@@ -1,7 +1,7 @@
 <h1 align="center"> AEROSPACE BLOGGERS</h1>
 <div align="center">
   <%= will_paginate %>
-  <% @users.order('username ASC').each do |user| %>
+  <% @users.each do |user| %>
   <% name = user.username.split("") %>
   <% name = name[0].upcase %>
     <ul class="listing" >
@@ -16,7 +16,11 @@
           </li>
         </br>
           <li><small class="btn btn-block btn-success btn-lg"><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
-        </br></br>
+        </br><div style="font-size:1.4em;color:orange;font-weight:bold;">
+          <small>Created by: <%= user.username %>,
+                  <%= time_ago_in_words(user.created_at) %> ago,
+                  last updated: <%= time_ago_in_words(user.updated_at) %> ago</small>
+        </div>
           <% if logged_in? and current_user.admin? %>
             <li class="btn btn-warning btn-lg btn-block"><%= link_to "Delete this user", user_path(user), method: :delete,
                 data: { confirm: "Are you sure you want to delete the user and all their articles?" } %></li>
