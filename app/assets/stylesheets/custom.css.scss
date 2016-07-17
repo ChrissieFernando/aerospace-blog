@@ -58,10 +58,9 @@ $navbar-default-bg:#0b1414;
   height: 450px;
 }
 .mobile{
-  background-image:asset-url('machyard.jpg');
-  background-size:cover;
-  padding-top: -10px;
-  height: 500px;
+  background-image:asset-url('aero.jpg');
+  background-size: cover;
+  height: 400px;
 }
 .jumbotron h1 {
   color: #fff;
@@ -108,7 +107,7 @@ $navbar-default-bg:#0b1414;
 }
 
 .badge {
-   background-color:#0cdbfd;
+   background-color:#5ca03b;
 
   padding: 6px;
   text-transform: uppercase;
