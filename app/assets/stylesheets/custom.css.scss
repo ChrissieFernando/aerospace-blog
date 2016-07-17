@@ -108,20 +108,14 @@ $navbar-default-bg:#0b1414;
 }
 
 .badge {
-  background-color: #CEF6F5;
+   background-color:#0cdbfd;
+
   padding: 6px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
 }
-.badge:hover {
-  background-color:#0fbab7;
-  text-decoration: none;
-  padding: 8px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
+
 
 .input_checkbox input {
   width: auto !important;
