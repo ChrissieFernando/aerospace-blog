@@ -10,15 +10,8 @@ class UsersController < ApplicationController
       render ("pages/home")
     end
   end
-
   def new
-    if logged_in?
       @user = User.new
-    else
-      flash[:danger] = "You must be logged in to view the Users"
-      render ("pages/home")
-    end
-
   end
 
   def create
