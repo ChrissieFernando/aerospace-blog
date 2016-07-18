@@ -14,7 +14,8 @@
 
  <% if video.video == nil %>
  <% else %>
- <div class="col-lg-10 col-lg-offset-1 jumbotron center effect5 user1">
+ <div class=" col-lg-10 col-lg-offset-1 jumbotron center ">
+   <div class="well well-lg effect5 user1>
  <% user = video.user_id %>
  <% user = User.find(user) %>
  <h3> video shared by: <%= user.username %> </h3></br>
