@@ -11,8 +11,10 @@
 </div>
 <div class="visible-lg">
 <% @videos.order('updated_at DESC').each do |video| %>
+
  <% if video.video == nil %>
  <% else %>
+ <div class="jumbotron center effect5 user1">
  <% user = video.user_id %>
  <% user = User.find(user) %>
  <h3> video shared by: <%= user.username %> </h3></br>
@@ -20,8 +22,9 @@
   <object width="80%" height="420" allowfullscreen = "true"
   data="<%= video.video %>" >
   </object>
-
+  </div>
 <% end %>
+
 <% end %>
 </div>
 </div>
