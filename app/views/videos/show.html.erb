@@ -1,15 +1,15 @@
-<div class="jumbotron center effect5 user1">
-<div class="visible-sm">
+
+<div class=" jumbotron center visible-sm">
 <h4>THE VIDEOS ARE SUPPORTED ONLY IN LARGE SCREEN</h4>
 </div>
-<div class="visible-md">
+<div class=" jumbotron center visible-md">
 <h4>THE VIDEOS ARE SUPPORTED ONLY IN LARGE SCREEN</h4>
 </div>
 
-<div class="visible-xs">
+<div class=" jumbotron center visible-xs">
 <h4>THE VIDEOS ARE SUPPORTED ONLY IN LARGE SCREEN</h4>
 </div>
-<div class="visible-lg">
+<div class=" visible-lg">
 <% @videos.order('updated_at DESC').each do |video| %>
 
  <% if video.video == nil %>
@@ -26,5 +26,4 @@
 <% end %>
 
 <% end %>
-</div>
 </div>
