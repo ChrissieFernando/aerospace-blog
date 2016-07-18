@@ -1,0 +1,27 @@
+<div class="jumbotron center effect5 user1">
+<div class="visible-sm">
+<h4>THE VIDEOS ARE SUPPORTED ONLY IN LARGE SCREEN</h4>
+</div>
+<div class="visible-md">
+<h4>THE VIDEOS ARE SUPPORTED ONLY IN LARGE SCREEN</h4>
+</div>
+
+<div class="visible-xs">
+<h4>THE VIDEOS ARE SUPPORTED ONLY IN LARGE SCREEN</h4>
+</div>
+<div class="visible-lg">
+<% @videos.order('updated_at DESC').each do |video| %>
+ <% if video.video == nil %>
+ <% else %>
+ <% user = video.user_id %>
+ <% user = User.find(user) %>
+ <h3> video shared by: <%= user.username %> </h3></br>
+
+  <object width="80%" height="420" allowfullscreen = "true"
+  data="<%= video.video %>" >
+  </object>
+
+<% end %>
+<% end %>
+</div>
+</div>

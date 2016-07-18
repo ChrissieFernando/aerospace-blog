@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'videos/show'
+
   root 'pages#home'
   get 'about', to: 'pages#about'
   
