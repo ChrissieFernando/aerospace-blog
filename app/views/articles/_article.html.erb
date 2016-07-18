@@ -9,7 +9,8 @@
           <% name = user.username.split("") %>
           <% name = name[0].upcase %>
           <div align = "center">
-            <div class="name">
+            <div>
+               <%= link_to image_tag("aero.jpg" ,class: "name") , user_path(user)  %>
             </div>
             </br>
           <%= link_to article.title, article_path(article) %>
