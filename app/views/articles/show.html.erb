@@ -83,7 +83,7 @@
         <h3><b>COMMENTS<b></h3>
         <hr >
       <% @article.comments.order("updated_at DESC").each do |comment| %>
-      <div align = "left" class =" well well-sm effect5 user1 center card-info" ></br>
+      <div align = "left" class =" well well-sm effect5 user1 center card-warning" >
       <h4> <%= comment.comment.html_safe %><%= time_ago_in_words(comment.updated_at) %> ago</h4></br></br>
       <% if logged_in? && (current_user == comment.user || current_user.admin?) %>
         <div class="article-actions">
