@@ -1,0 +1,47 @@
+<div class="center">
+<%= form_for(@messages, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="form-group">
+    <div class="control-label col-sm-2 center">
+    <h3> <%= f.label :messages %> </h3>
+    </div>
+    <div class="col-sm-9">
+    <h3>  <%= f.text_field :messages , class: "form-control", placeholder: "SUBMIT YOUR MESSAGES", autofocus: true %></h3>
+    </div>
+  </div>
+<% end %>
+</div>
+<div class="jumbotron center  user1 ">
+  <hr >
+  <h3><b>MESSAGES<b></h3>
+  <hr >
+<% @message.order("updated_at DESC").each do |comment| %>
+<% if comment.userid == current_user.id %>
+      <div align = "left" class =" well well-sm effect5 user1 center card-success" >
+      <h3> <%= comment.messages %></h3><b>by<b><h5><b><em><%= comment.user_name %> <%= time_ago_in_words(comment.updated_at) %> ago</em><b></h5></br>
+      <% if logged_in? && (current_user.id == comment.userid || current_user.admin?) %>
+        <div class="article-actions">
+        </br>
+          <%= link_to "Delete this Message", message_path(comment), method: :delete,
+                                        data: { confirm: "Are you sure you want to delete the Message?"},
+                                      class: "btn btn-xs btn-danger" %>
+        </div>
+
+        <% end %>
+        </div>
+
+<% else %>
+    <div align = "left" class ="well well-sm effect5 user1 center card-warning" >
+    <h3> <%= comment.messages %></h3><b>by<b><h5><b><em><%= comment.user_name %> <%= time_ago_in_words(comment.updated_at) %> ago</em><b></h5></br>
+    <% if logged_in? && (current_user.id == comment.userid || current_user.admin?) %>
+      <div class="article-actions">
+      </br>
+        <%= link_to "Delete this Message", message_path(comment), method: :delete,
+                                      data: { confirm: "Are you sure you want to delete the Message?"},
+                                    class: "btn btn-xs btn-danger" %>
+
+      </div>
+    <% end %>
+   </div>
+ <% end %>
+ <% end %>
+</div>

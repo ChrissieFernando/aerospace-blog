@@ -1,6 +1,6 @@
 <div>
 <h2 align="center">TITLE<b>: <%= @article.title.upcase %></b></h2>
-<div class="well well-lg col-xs-12 col-sm-10 col-md-10 col-md-offset-1 col-lg-8  col-sm-offset-1 col-lg-offset-2  user1"  align = "center" style="border-top-left-radius: 20px;" >
+<div class="well well-sm col-xs-12 col-sm-10 col-md-10 col-md-offset-1 col-lg-8  col-sm-offset-1 col-lg-offset-2  user1"  align = "center" style="border-top-left-radius: 20px;" >
   <% if @article.user %>
   <% name = @article.user.username.split("") %>
   <% name = name[0].upcase %>
@@ -83,6 +83,21 @@
         <h3><b>COMMENTS<b></h3>
         <hr >
       <% @article.comments.order("updated_at DESC").each do |comment| %>
+      <% if comment.user_id == current_user.id %>
+      <div align = "left" class =" well well-sm effect5 user1 center card-success" >
+      <h4> <%= comment.comment.html_safe %><%= time_ago_in_words(comment.updated_at) %> ago</h4></br></br>
+      <% if logged_in? && (current_user == comment.user || current_user.admin?) %>
+        <div class="article-actions">
+        </br>
+          <%= link_to "Delete this Post", comment_path(comment), method: :delete,
+                                        data: { confirm: "Are you sure you want to delete the Post?"},
+                                      class: "btn btn-xs btn-danger" %>
+        </div>
+
+        <% end %>
+        </div>
+      </br>
+      <% else %>
       <div align = "left" class =" well well-sm effect5 user1 center card-warning" >
       <h4> <%= comment.comment.html_safe %><%= time_ago_in_words(comment.updated_at) %> ago</h4></br></br>
       <% if logged_in? && (current_user == comment.user || current_user.admin?) %>
@@ -96,6 +111,7 @@
         <% end %>
         </div>
       </br>
+      <% end %>
       <% end %>
 
     <% end %>
