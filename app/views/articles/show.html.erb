@@ -98,7 +98,7 @@
         </div>
       </br>
       <% else %>
-      <div align = "left" class =" well well-sm effect5 user1 center card-warning" >
+      <div align = "left" class =" well well-sm effect5 user1 center card-info" >
       <h4> <%= comment.comment.html_safe %><%= time_ago_in_words(comment.updated_at) %> ago</h4></br></br>
       <% if logged_in? && (current_user == comment.user || current_user.admin?) %>
         <div class="article-actions">

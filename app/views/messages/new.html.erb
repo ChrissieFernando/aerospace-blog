@@ -11,14 +11,14 @@
 <% end %>
 </div>
 <div class="jumbotron center  user1 ">
-<hr><h2 style="color:blue"><b>MESSAGES<b></h2><hr>
+<hr><h2 style="color:orange"><b>MESSAGES<b></h2><hr>
   <% if @message.count == 0 %>
   <h3>NO MESSAGES TO DISPLAY </h3>
   <% else %>
 <% @message.order("updated_at DESC").each do |comment| %>
 <% if comment.userid == current_user.id %>
       <div align = "left" class =" well well-sm effect5 user1 center card-success" >
-      <h3> <%= comment.messages %></h3><b>by<b><h5><b><em><%= comment.user_name %> <%= time_ago_in_words(comment.updated_at) %> ago</em><b></h5></br>
+      <h4> <%= comment.messages %></h4><b>by<b><h5><b><em><%= comment.user_name %> <%= time_ago_in_words(comment.updated_at) %> ago</em><b></h5></br>
       <% if logged_in? && (current_user.id == comment.userid || current_user.admin?) %>
         <div class="article-actions">
         </br>
@@ -32,7 +32,7 @@
 
 <% else %>
     <div align = "left" class ="well well-sm effect5 user1 center card-warning" >
-    <h3> <%= comment.messages %></h3><b>by<b><h5><b><em><%= comment.user_name %> <%= time_ago_in_words(comment.updated_at) %> ago</em><b></h5></br>
+    <h4> <%= comment.messages %></h4><b>by<b><h5><b><em><%= comment.user_name %> <%= time_ago_in_words(comment.updated_at) %> ago</em><b></h5></br>
     <% if logged_in? && (current_user.id == comment.userid || current_user.admin?) %>
       <div class="article-actions">
       </br>
