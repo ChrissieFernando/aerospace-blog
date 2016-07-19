@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comments.user = current_user
     if @comments.save
        @comt =  "<h3>"+@comments.comment+"</h3>" + " <h5>by</h5>" + "<h4><b><span class='comment_name'>"+current_user.username+"<b>"+"</span>"+"</h4>"
-    @comments.update(comment: @comt)   
+    @comments.update(comment: @comt)
       flash[:success] = "comment was successfully posted"
       @article = Article.find(@comments.article_id)
       redirect_to article_path(@article)
