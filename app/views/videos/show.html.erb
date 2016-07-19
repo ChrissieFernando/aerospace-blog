@@ -12,14 +12,14 @@
 <div class=" visible-lg">
 <% @videos.order('updated_at DESC').each do |video| %>
 
- <% if video.video == nil %>
+<% if video.video == nil || video.video.length < 15 %>
  <% else %>
  <div class=" well well-lg col-lg-10 col-lg-offset-1 jumbotron center effect5 user1 ">
  <% user = video.user_id %>
  <% user = User.find(user) %>
  <h3> video shared by: <%= user.username %> </h3></br>
 
-  <object width="85%" height="430" 
+  <object width="85%" height="430"
   data="<%= video.video %>" >
   </object>
 </div>

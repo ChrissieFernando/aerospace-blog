@@ -37,6 +37,10 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
+      if !params[:comment]
+        @article.comment = @article.comment + " " + "\n by " + current_user.username
+        @article.save
+      end
       flash[:success] = "Article was successfully updated"
       redirect_to article_path(@article)
     else
@@ -46,6 +50,7 @@ class ArticlesController < ApplicationController
 
   def show
     if logged_in?
+      @comments = Comment.new
       render('show')
     else
 
@@ -65,7 +70,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :description,:video, category_ids: [])
+      params.require(:article).permit(:title, :description,:video,:comment ,category_ids: [])
     end
 
     def require_same_user

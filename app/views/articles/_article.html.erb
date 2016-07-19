@@ -26,7 +26,7 @@
           </div>
         </br>
         <div class="visible-lg">
-        <% if article.video == nil %>
+        <% if article.video == nil || article.video.length < 15 %>
         <% else %>
           <object width="100%" height="420"
           data="<%= article.video %>">
