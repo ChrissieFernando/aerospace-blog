@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     if logged_in?
-      @users = User.order('username ASC').paginate(page: params[:page], per_page: 6)
+      @users = User.order('username ASC').paginate(page: params[:page], per_page: 10)
     else
       render ("pages/home")
     end
