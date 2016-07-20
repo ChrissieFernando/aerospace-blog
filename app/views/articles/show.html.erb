@@ -1,6 +1,6 @@
 <div>
 <h2 align="center">TITLE<b>: <%= @article.title.upcase %></b></h2>
-<div class="well well-sm col-xs-12 col-sm-10 col-md-10 col-md-offset-1 col-lg-8  col-sm-offset-1 col-lg-offset-2  user1"  align = "center" style="border-top-left-radius: 20px;" >
+<div class="well well-lg col-xs-12 col-sm-12 col-md-10  col-lg-8  col-lg-offset-2  col-md-offset-1 user1"  align = "center" style="border-top-left-radius: 20px;" >
   <% if @article.user %>
   <% name = @article.user.username.split("") %>
   <% name = name[0].upcase %>
