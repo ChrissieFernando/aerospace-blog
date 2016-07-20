@@ -1,12 +1,7 @@
 $navbar-default-bg:#0b1414;
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@media(max-width:$screen-sm-max) {
-.mobile{
-  background-image:asset-url('machyard.jpg');
-  background-size: cover;
-  height:450px;
-}
+@media(max-width:$screen-md-max) {
 
 .navbar-header {
    float: none;
@@ -59,12 +54,26 @@ $navbar-default-bg:#0b1414;
   text-decoration: none;
   padding-bottom: 0px;
 }
+.left{
+  margin-right: 50px;
+}
 .name_user {
-  width: 140px;
-  height: 140px;
+  // width: 140px;
+  // height: 140px;
+  // padding-left: 80px;
   font-size: 12em;
-  margin-bottom: 10px;
-  text-decoration:none;
+  margin-bottom: -100px;
+  margin-top:-50px;
+  // text-decoration:none;
+}
+.name_user1 {
+  // width: 140px;
+  // height: 140px;
+  // padding-left: 80px;
+  font-size: 12em;
+  margin-bottom: -110px;
+  margin-top:-40px;
+  // text-decoration:none;
 }
 #logo {
   float: left;

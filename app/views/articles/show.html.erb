@@ -8,10 +8,10 @@
       <div class="row ">
         <div class="col-md-4 col-md-offset-4 ">
           <li style="color:darkgreen">Created by:</li>
-          <div class="name_user hidden-xs "  style=" font-weight:400;">
+          <div class="name_user1 hidden-xs "  style=" font-weight:400;">
           <li><%= link_to name , user_path(@article.user) %></li>
           </div>
-          <div class="name_user visible-xs "  style=" font-weight:400;">
+          <div class="name_user1 visible-xs "  style=" font-weight:400;">
           <li><%= link_to name , user_path(@article.user) %></li>
           </div>
         </br>
@@ -73,7 +73,7 @@
           <h3> <%= f.label :comment %> </h3>
           </div>
           <div class="col-sm-10">
-          <h3>  <%= f.text_field :comment, class: "form-control", placeholder: "POST YOUR COMMENTS", autofocus: true %></h3>
+          <h3>  <%= f.text_field :comment, class: "form-control", placeholder: "POST YOUR COMMENTS", autofocus: false %></h3>
           </div>
           <%= hidden_field_tag(:article_id, @article.id ) %>
         </div>
