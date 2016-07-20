@@ -10,7 +10,11 @@
   <%= will_paginate @user_articles %>
 </div>
 </br>
+<% if @user_articles.count > 0 %>
 <%= render 'articles/article', obj: @user_articles %>
+<% else %>
+<h4 class="center"><b>NOT YET CREATED ANY ARTICLES<b><h4>
+<% end %>
 </br>
 <div class="center">
   <%= will_paginate @user_articles %>
