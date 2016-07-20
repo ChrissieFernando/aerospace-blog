@@ -1,4 +1,5 @@
-<h1 align="center"> AEROSPACE BLOGGERS</h1>
+<h1 align="center"> SEARCH RESULTS </h1>
+</br>
   <% if @users.count > 0%>
   <% @users.each do |user| %>
   <% name = user.username.split("") %>
@@ -33,6 +34,6 @@
   <% end %>
   <% else %>
   <div class = "center">
-  <h3> <%= @search %> not found </h3>
+  <h3> search for "<%= @search %>" not found </h3>
   </div>
   <% end %>
