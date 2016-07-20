@@ -58,7 +58,7 @@
         </div> -->
         <%= form_tag(posts_path, :method => "get", id: "search-form" ,class: "navbar-form navbar-left") do %>
         <div class="form-group">
-        <%= text_field_tag :search, params[:search], placeholder: "Search by name",class: "form-control visible-lg" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search by name",class: "form-control visible-lg" ,style: "opacity:.7;color:black;" %>
         <!-- <%= submit_tag "Search" %> -->
           </div>
         <% end %>
