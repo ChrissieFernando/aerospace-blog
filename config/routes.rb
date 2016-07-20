@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'videos/show'
 
-  root 'pages#home'
+  root 'sessions#new'
   get 'about', to: 'pages#about'
 
   resources :articles
