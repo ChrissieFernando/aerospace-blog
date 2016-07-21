@@ -8,5 +8,5 @@ def index
      else
        @users = User.all.order('username ASC')
      end
-end
+   end
 end

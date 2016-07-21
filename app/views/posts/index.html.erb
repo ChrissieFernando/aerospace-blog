@@ -1,4 +1,4 @@
-<!-- <h1 align="center"> SEARCH RESULTS </h1> -->
+<h1 align="center"> SEARCH RESULTS </h1>
 </br>
   <% if @users.count > 0%>
   <% @users.each do |user| %>
@@ -34,11 +34,11 @@
             <li class="btn btn-warning btn-lg btn-block"><%= link_to "Delete this user", user_path(user), method: :delete,
                 data: { confirm: "Are you sure you want to delete the user and all their articles?" } %></li>
           <% end %>
-        <!-- </div> -->
       </div>
       </div>
+    </div>
     </ul>
-  <% end %>
+    <%end%>
   <% else %>
   <div class = "center">
   <h3> search for "<%= @search %>" not found </h3>
