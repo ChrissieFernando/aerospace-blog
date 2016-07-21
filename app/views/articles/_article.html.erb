@@ -13,8 +13,9 @@
               <% if user.picture? %>
                <%= link_to image_tag(user.picture.url ,class: "name") , user_path(user)  %>
               <% else %>
-              <div class=" center name_user listing">
+              <div class=" center name_user2 listing">
               <li><%= link_to name , user_path(user) %></li>
+              </br>
               </div>
               <% end %>
             </br></br>

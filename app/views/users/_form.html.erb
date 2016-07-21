@@ -30,6 +30,7 @@
         </div>
       </div>
         </br>
+          <% if logged_in? %>
         <div class="form-group">
           <div class="control-label col-sm-2">
             <%= f.label :picture %>
@@ -39,6 +40,7 @@
           </div>
         </div>
           </br>
+          <% end %>
       <div class="form-group">
         <div class="col-xs-offset-4 col-sm-offset-5 ">
           <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: 'btn btn-primary btn-lg') %>
