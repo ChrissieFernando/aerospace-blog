@@ -2,7 +2,7 @@
 
 <div class='row '>
   <div class='col-xs-12 jumbotron effect5 user1 bg-danger'>
-    <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <%= form_for(@article, :html => { multipart: true, class: "form-horizontal", role: "form"}) do |f| %>
       <div class="form-group">
         <div class="control-label col-sm-2">
         <h3> <%= f.label :title %> </h3>
@@ -30,7 +30,15 @@
         </div>
       </div>
     </br>
-    </br>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+        <h3><%= f.label :files %></h3>
+      </div>
+      <div class="col-sm-8">
+      <h3><%= f.file_field :files ,accept:"pdf,image/*,video/mp4,application/pdf,audio/*", class: "form-control" %></h3>
+      </div>
+    </div>
+  </br>
       <div class="form-group">
         <div class="row">
           <div class=" center" style="font-size:1.4em;color:orange;">
@@ -40,8 +48,6 @@
           </div>
         </div>
       </div>
-    </br>
-    </br>
       <div class="form-group">
         <div class="center ">
           <%= f.submit class: 'btn btn-primary btn-lg' %>

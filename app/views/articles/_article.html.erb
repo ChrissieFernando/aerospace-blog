@@ -39,6 +39,16 @@
           </object>
         <% end %>
       </div>
+    </br>
+    <div class="visible-lg">
+    <% if article.files.url == nil || article.files.url.length < 20 %>
+    <% else %>
+      <object width="100%" height="420"
+      data="<%= article.files.url %>">
+      </object>
+    <% end %>
+  </div>
+
 
           <div class="article-meta-details">
             <small>Created by: <%= article.user.username if article.user%>,

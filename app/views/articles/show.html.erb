@@ -49,6 +49,14 @@
   </object>
 <% end %>
 </div>
+<div class="visible-lg">
+<% if @article.files.url == nil || @article.files.url.length < 20 %>
+<% else %>
+  <object width="100%" height="420"
+  data="<%= @article.files.url %>">
+  </object>
+<% end %>
+</div>
   <% if @article.categories.any? %>
     <p><b> CATECOGRIES :</br></br> </b> <%= render @article.categories %></p>
   <% end %>
