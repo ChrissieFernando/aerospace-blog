@@ -10,9 +10,14 @@
           <% name = name[0].upcase %>
           <div align = "center">
             <div>
-               <%= link_to image_tag("aero.jpg" ,class: "name") , user_path(user)  %>
-            </div>
-            </br>
+              <% if user.picture? %>
+               <%= link_to image_tag(user.picture.url ,class: "name") , user_path(user)  %>
+              <% else %>
+              <div class=" center name_user listing">
+              <li><%= link_to name , user_path(user) %></li>
+              </div>
+              <% end %>
+            </br></br>
           <%= link_to article.title, article_path(article) %>
           </div>
           </div>

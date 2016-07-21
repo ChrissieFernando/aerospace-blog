@@ -9,10 +9,18 @@
   <% name = name[0].upcase %>
     <ul class="listing" >
         <div class="well well-lg col-lg-5 col-lg-offset-1 col-xs-offset-1 col-md-5 col-md-offset-1 col-xs-10 col-sm-10 col-sm-offset-1 user1 "  >
+          <% if user.picture? %>
+           <%= link_to image_tag(user.picture.url ,class: "name") , user_path(user)  %>
+          <% else %>
           <div class=" center name_user">
           <li><%= link_to name , user_path(user) %></li>
           </div>
-        </br></br></br></br>
+          <% end %>
+          <% if user.picture? %>
+        </br></br>
+        <% else %>
+      </br></br></br></br>
+          <% end %>
           <li class="center article-title">
             <%= link_to user.username, user_path(user) %>
           </li>

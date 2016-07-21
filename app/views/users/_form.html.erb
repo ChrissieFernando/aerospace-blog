@@ -2,7 +2,7 @@
 <div class ="jumbotron effect5 user1">
 <div class='row'>
   <div class='col-xs-12'>
-    <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <%= form_for(@user, :html => { multipart: true, class: "form-horizontal", role: "form"}) do |f| %>
       <div class="form-group">
         <div class="control-label col-sm-2">
           <%= f.label :username %>
@@ -30,6 +30,15 @@
         </div>
       </div>
         </br>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :picture %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png,image/jpg' , class: "form-control", placeholder: "Enter password" %>
+          </div>
+        </div>
+          </br>
       <div class="form-group">
         <div class="col-xs-offset-4 col-sm-offset-5 ">
           <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: 'btn btn-primary btn-lg') %>
