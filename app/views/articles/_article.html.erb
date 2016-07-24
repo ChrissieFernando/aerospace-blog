@@ -4,17 +4,17 @@
       <div class="well well-lg effect5 user1  "  id = "article" >
         <div class="article-title">
           <div class="row">
-          <% user = article.user_id %>
-          <% user = User.find(user) %>
-          <% name = user.username.split("") %>
+          <% user1 = article.user_id %>
+          <% user1 = User.find(user1) %>
+          <% name = user1.username.split("") %>
           <% name = name[0].upcase %>
           <div align = "center">
             <div>
-              <% if user.picture? %>
-               <%= link_to image_tag(user.picture.url ,class: "name") , user_path(user)  %>
+              <% if user1.picture? %>
+               <%= link_to image_tag(user1.picture.url ,class: "name") , user_path(user1)  %>
               <% else %>
               <div class=" center name_user2 listing">
-              <li><%= link_to name , user_path(user) %></li>
+              <li><%= link_to name , user_path(user1) %></li>
               </br>
               </div>
               <% end %>

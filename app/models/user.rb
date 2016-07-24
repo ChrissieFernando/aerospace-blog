@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
   validate :picture_size
 
   private
-
   def picture_size
     if picture.size > 2.megabytes
       errors.add(:picture, "should be less than 2MB")
