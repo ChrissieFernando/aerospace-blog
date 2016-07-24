@@ -34,7 +34,7 @@
         <div class="visible-lg">
         <% if article.video == nil || article.video.length < 15 %>
         <% else %>
-          <object width="100%" height="450"
+          <object width="100%" height="480"
           data="<%= article.video %>">
           </object>
         <% end %>
@@ -43,7 +43,7 @@
     <div class="visible-lg">
     <% if article.files.url == nil || article.files.url.length < 20 %>
     <% else %>
-      <object width="100%" height="420"
+      <object width="100%" height="480"
       data="<%= article.files.url %>">
       </object>
     <% end %>
