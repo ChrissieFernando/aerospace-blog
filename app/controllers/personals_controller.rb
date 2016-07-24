@@ -16,7 +16,7 @@ class PersonalsController < ApplicationController
      def destroy
        @personal = Personal.find(params[:id])
        if @personal.destroy
-       flash[:danger] = "Post was successfully deleted"
+       flash[:danger] = "Message was successfully deleted"
        redirect_to :back
        end
     end
