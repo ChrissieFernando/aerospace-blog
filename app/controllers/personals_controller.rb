@@ -7,9 +7,9 @@ class PersonalsController < ApplicationController
       @personal.articleid = current_user.id
           if @personal.save
             redirect_to :back
-            flash[:success] = "message was successfully posted"
+            flash[:success] = "message was successfully sent"
           else
-             flash[:danger] = "message failure"
+             flash[:danger] = "message sent failed"
              redirect_to :back;
           end
      end
