@@ -6,6 +6,22 @@
   <h1  align="center" style="font-size:15em">  <%= name %>  </h1>
 <h3 align="center" style="color:orange; font-weight:bold;"><%= @user.username %>'s articles</h3>
 </br>
+<% if @user.id == current_user.id %>
+<% else %>
+<%= form_tag(controller: "personals" ,action: "create" ,method: "get", :html => {class: "form-horizontal", role: "form"}) do %>
+  <div class="form-group center">
+    <div class="control-label col-sm-12">
+    <h3> <%= label_tag :personal %> </h3>
+    </div>
+  </br>
+    <div class="col-sm-8 col-sm-offset-2 center ">
+    <h3 >  <%= text_field_tag(:personal , "", class: "form-control center",autofocus: true) %></h3>
+    </div>
+    <%= hidden_field_tag(:userid, @user.id ) %>
+  </div>
+<% end %>
+<% end %>
+</br>
 <div class="center">
   <%= will_paginate @user_articles %>
 </div>
@@ -13,7 +29,8 @@
 <% if @user_articles.count > 0 %>
 <%= render 'articles/article', obj: @user_articles %>
 <% else %>
-<h4 class="center"><b>NOT YET CREATED ANY ARTICLES<b><h4>
+</br>
+<h4 class="center col-sm-12"><b>NOT YET CREATED ANY ARTICLES<b><h4>
 <% end %>
 </br>
 <div class="center">

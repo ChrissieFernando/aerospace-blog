@@ -1,0 +1,36 @@
+<div class="jumbotron center  user1 ">
+  <hr><h2 style="color:orange"><b>PERSONAL MESSAGES<b></h2><hr>
+  <% if @personals.count == 0 %>
+     <h3>NO PERSONAL MESSAGES TO DISPLAY </h3>
+  <% else %>
+        <% @personals.order("updated_at DESC").each do |personal| %>
+        <% if personal.userid == current_user.id %>
+             <% @user = User.find(personal.articleid) %>
+              <div align = "left" class =" well well-sm effect5 user1 center card-info" >
+                  <h4> <%= personal.personal %></h4><b>by<b><h5><b><em><%= @user.username %> <%= time_ago_in_words(personal.updated_at) %> ago</em><b></h5></br>
+                  <% if logged_in? && (current_user.id == personal.userid || current_user.admin?  ) %>
+                        <div class="article-actions">
+                        </br>
+                          <%= link_to "Delete this Message", personal_path(personal), method: :delete,  data: { confirm: "Are you sure you want to delete the Message?"},class: "btn btn-xs btn-danger" %>
+                        </div>
+                  <% end %>
+              </div>
+            <% end %>
+            <% if personal.articleid == current_user.id %>
+                    <% @user = User.find(personal.userid) %>
+                    <div align = "left" class =" well well-sm effect5 user1 center card-success" >
+                        <h4> <%= personal.personal %></h4><b>send to<b><h5><b><em><%= @user.username %> <%= time_ago_in_words(personal.updated_at) %> ago</em><b></h5></br>
+                        <% if logged_in? && (current_user.id == personal.articleid || current_user.admin?  ) %>
+                                <div class="article-actions">
+                                </br>
+                                  <%= link_to "Delete this Message", personal_path(personal), method: :delete,
+                                                                data: { confirm: "Are you sure you want to delete the Message?"},
+                                                              class: "btn btn-xs btn-danger" %>
+                                </div>
+
+                        <% end %>
+                    </div>
+               <% end %>
+            <% end %>
+      <% end %>
+</div>

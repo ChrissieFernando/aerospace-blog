@@ -76,6 +76,7 @@
             <ul class="dropdown-menu" style="background-color:#0b1414;opacity:1;">
               <li style="font-size:1.2em" ><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
               <li style="font-size:1.2em" ><%= link_to "View your profile", user_path(current_user) %></li>
+              <li style="font-size:1.2em" ><%= link_to "Personal Messages", personals_path %></li>
               <li role="separator" class="divider"></li>
               <% if logged_in? and current_user.admin? %>
             <li style="font-size:1.2em" ><%= link_to 'Sign up', signup_path %></li>

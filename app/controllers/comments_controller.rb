@@ -10,11 +10,10 @@ class CommentsController < ApplicationController
     @comments.update(comment: @comt)
       flash[:success] = "comment was successfully posted"
       @article = Article.find(@comments.article_id)
-      redirect_to article_path(@article)
+      redirect_to :back
     else
       @comments = Comment.new
-      @article = Article.find(params[:article_id])
-      redirect_to article_path(@article)
+      redirect_to :back
     end
   end
   def destroy
@@ -23,7 +22,7 @@ class CommentsController < ApplicationController
     @article = Article.find(@article)
     if @comment.destroy
     flash[:danger] = "Post was successfully deleted"
-    redirect_to articles_path(@article)
+    redirect_to :back
     end
   end
   private
