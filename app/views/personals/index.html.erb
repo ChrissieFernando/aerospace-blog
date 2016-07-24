@@ -7,7 +7,7 @@
         <% if personal.userid == current_user.id %>
              <% @user = User.find(personal.articleid) %>
               <div align = "left" class =" well well-sm effect5 user1 center card-info" >
-                  <h4> <%= personal.personal %></h4><b>by<b><h5><b><em><%= @user.username %> <%= time_ago_in_words(personal.updated_at) %> ago</em><b></h5></br>
+                  <h4> <%= personal.personal %></h4><b>from<b><h5><b><em><%= @user.username %> <%= time_ago_in_words(personal.updated_at) %> ago</em><b></h5></br>
                   <% if logged_in? && (current_user.id == personal.userid || current_user.admin?  ) %>
                         <div class="article-actions">
                         </br>
@@ -19,7 +19,7 @@
             <% if personal.articleid == current_user.id %>
                     <% @user = User.find(personal.userid) %>
                     <div align = "left" class =" well well-sm effect5 user1 center card-success" >
-                        <h4> <%= personal.personal %></h4><b>send to<b><h5><b><em><%= @user.username %> <%= time_ago_in_words(personal.updated_at) %> ago</em><b></h5></br>
+                        <h4> <%= personal.personal %></h4><b>to<b><h5><b><em><%= @user.username %> <%= time_ago_in_words(personal.updated_at) %> ago</em><b></h5></br>
                         <% if logged_in? && (current_user.id == personal.articleid || current_user.admin?  ) %>
                                 <div class="article-actions">
                                 </br>
