@@ -1,4 +1,18 @@
+<%= javascript_tag do %>
+function executeQuery() {
+  $.ajax({
+    url: '/messages/new',
+    success: function(data) {
+    $('#messages').load('/messages/new #messages')
+    }
+  });
+  setTimeout(executeQuery, 1000);
+}
 
+$(document).ready(function() {
+  setTimeout(executeQuery, 1000);
+});
+<% end %>
 <div class="center">
 <%= form_for(@messages, :html => {class: "form-horizontal", role: "form"}) do |f| %>
   <div class="form-group">
@@ -11,7 +25,7 @@
   </div>
 <% end %>
 </div>
-<div class="jumbotron center  user1 ">
+<div class="jumbotron center  " id="messages">
 <hr><h2 style="color:orange"><b>MESSAGES<b></h2><hr>
   <% if @message.count == 0 %>
   <h3>NO MESSAGES TO DISPLAY </h3>
