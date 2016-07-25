@@ -1,5 +1,19 @@
-</script>
-<div class="jumbotron center  user1 " id="personal">
+<%= javascript_tag do %>
+function executeQuery() {
+  $.ajax({
+    url: '/personals',
+    success: function(data) {
+    $('#personal').load('/personals #personal')
+    }
+  });
+  setTimeout(executeQuery, 1000);
+}
+
+$(document).ready(function() {
+  setTimeout(executeQuery, 1000);
+});
+<% end %>
+<div class=" center  " id="personal">
   <hr><h2 style="color:orange"><b>PERSONAL MESSAGES<b></h2><hr>
   <% if @personals.count == 0 %>
      <h3>NO PERSONAL MESSAGES TO DISPLAY </h3>

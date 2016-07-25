@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
   def new
-    @message = Message.all
+    @message = Message.order("updated_at DESC")
     @messages = Message.new
   end
   def create
@@ -13,17 +13,17 @@ class MessagesController < ApplicationController
     if @message.save
       flash[:success] = "Message was submitted successfully"
         @messages = Message.all
-      redirect_to new_message_path
+      redirect_to :back
     else
       @messages = Message.new
-      redirect_to new_message_path
+      redirect_to :back
     end
   end
   def destroy
     @message = Message.find(params[:id])
     if @message.destroy
     flash[:danger] = "message was successfully deleted"
-    redirect_to new_message_path
+    redirect_to :back
     end
   end
   private
