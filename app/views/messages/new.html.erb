@@ -13,6 +13,7 @@ $(document).ready(function() {
   setTimeout(executeQuery, 1000);
 });
 <% end %>
+
 <div class="center">
 <%= form_for(@messages, :html => {class: "form-horizontal", role: "form"}) do |f| %>
   <div class="form-group">
@@ -25,7 +26,7 @@ $(document).ready(function() {
   </div>
 <% end %>
 </div>
-
+<div class="col-lg-10 col-lg-offset-1">
 <div class=" center  " id="messages">
 <hr><h2 style="color:orange"><b>MESSAGES<b></h2><hr>
   <% if @message.count == 0 %>
@@ -62,4 +63,5 @@ $(document).ready(function() {
  <% end %>
  <% end %>
  <% end %>
+</div>
 </div>
